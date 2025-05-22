@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Забронировать консультацию</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/svg+xml" href="img/star-icon.svg">
+</head>
+<body id="consultation-page">
+    <div class="stars-background" id="stars-background"></div>
+
+    <form id="consultationForm" class="consultation-form-container">
+        <h1>Забронировать консультацию</h1>
+        <label for="project_name">Название проекта:</label>
+        <input type="text" id="project_name" name="project_name" required>
+        
+        <label for="project_link">Ссылка на проект:</label>
+        <input type="url" id="project_link" name="project_link" required>
+        
+        <label for="telegram">Контакт в Telegram:</label>
+        <input type="text" id="telegram" name="telegram" required>
+        
+        <button type="submit" class="btn primary-btn">Отправить запрос</button>
+        <a href="index.html" class="btn secondary-btn back-to-home-btn">На главную</a>
+    </form>
+
+    <div id="customMessageBox" class="custom-message-box">
+        <div class="message-content">
+            <p id="messageText"></p>
+            <button id="messageCloseBtn" class="btn primary-btn">ОК</button>
+        </div>
+    </div>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>

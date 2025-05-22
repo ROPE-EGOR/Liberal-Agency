@@ -1,0 +1,966 @@
+/* Custom CSS Variables for Colors (Black and White Style) */
+:root {
+    --dark-background: #1A1A1A; /* Main background - dark gray/almost black */
+    --medium-background: #2C2C2C; /* Section backgrounds, header - slightly lighter dark gray */
+    --light-text: #F0F0F0; /* Primary text, stars, and accents - off-white */
+    --accent-glow: #888888; /* Subtle glow color - medium gray */
+    --black: #000000;
+    --white: #FFFFFF; /* Pure white for strong contrast */
+    --gray-text: #B0B0B0; /* Secondary text - a lighter gray for readability */
+}
+
+/* Universal Box-Sizing and Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Smooth Scrolling for Anchor Links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Body Styles */
+body {
+    font-family: 'Montserrat', sans-serif; /* Primary font */
+    background-color: var(--dark-background);
+    color: var(--light-text); /* Main text color */
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Container for Centering Content */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Headings Styles */
+h1, h2, h3 {
+    font-family: 'Orbitron', sans-serif; /* Accent font for headings */
+    color: var(--light-text); /* Headings now use light-text */
+    margin-bottom: 20px;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.4); /* Subtle glow for headings */
+}
+
+h1 { font-size: 3.5em; }
+h2 { font-size: 2.8em; }
+h3 { font-size: 2em; }
+
+p {
+    margin-bottom: 15px;
+    color: var(--gray-text); /* Paragraphs use a lighter gray for contrast */
+}
+
+/* Link Styles */
+a {
+    color: var(--light-text); /* Links use light-text */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--white); /* Hover to pure white */
+}
+
+/* Button Styles */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 50px; /* Rounded corners */
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+.primary-btn {
+    background-color: var(--light-text); /* Primary button background is light-text */
+    color: var(--dark-background); /* Text on primary button is dark-background */
+    border: 2px solid var(--light-text);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2); /* Glow from light-text */
+}
+
+.primary-btn:hover {
+    background-color: var(--white); /* Hover to pure white */
+    color: var(--black);
+    border-color: var(--white);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.4);
+}
+
+.secondary-btn {
+    background-color: transparent;
+    color: var(--light-text); /* Secondary button text is light-text */
+    border: 2px solid var(--light-text);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1); /* Subtle glow */
+}
+
+.secondary-btn:hover {
+    background-color: var(--light-text); /* Hover background is light-text */
+    color: var(--dark-background);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
+}
+
+.tertiary-btn {
+    background-color: var(--medium-background);
+    color: var(--light-text);
+    border: 1px solid var(--light-text);
+    padding: 8px 15px;
+    font-size: 0.8em;
+    border-radius: 25px;
+}
+
+.tertiary-btn:hover {
+    background-color: var(--light-text);
+    color: var(--dark-background);
+    transform: translateY(-2px);
+}
+
+/* Header and Navigation */
+header {
+    background-color: var(--medium-background);
+    padding: 0; /* Убрал padding, чтобы height контролировал размер полоски */
+    position: sticky; /* Sticky navigation */
+    top: 0;
+    z-index: 1000; /* Ensure it stays on top */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+nav {
+    display: flex;
+    /* justify-content: space-between; /* УДАЛЕНО: Теперь центрирование кнопок будет обрабатываться .nav-center-wrapper */
+    align-items: center; /* Выравнивает элементы по центру вертикали */
+    max-width: 85%; /* Увеличил максимальную ширину навигационной полосы до 85% */
+    margin: 0 auto;
+    height: 85px; /* Увеличил фиксированную высоту для навигационной полоски */
+    padding: 0 20px; /* Горизонтальные отступы */
+}
+
+/* Стиль для контейнера логотипа и текста */
+.logo-brand {
+    display: flex;
+    align-items: center; /* Выравнивает иконку и текст по центру */
+    gap: 10px; /* Расстояние между иконкой и текстом */
+}
+
+/* Стиль для изображения звезды */
+.logo-brand img {
+    height: 75px; /* Размер звезды увеличен в 1.5 раза (50px * 1.5 = 75px) */
+    width: auto; /* Сохраняет пропорции */
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5)); /* Небольшое свечение для звезды */
+    animation: logo-star-pulse 2s infinite alternate, logo-star-float 3s infinite alternate; /* Изменены анимации */
+}
+
+/* Стиль для текста "Liberal Agency" */
+.logo-text {
+    font-family: 'Orbitron', sans-serif; /* Используем Orbitron для текста логотипа */
+    font-size: 28px; /* Размер текста увеличен для соответствия звезде */
+    font-weight: bold;
+    color: white; /* Белый цвет текста */
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.7); /* Легкое свечение для текста */
+}
+
+/* Новый контейнер для центрирования навигационных кнопок */
+.nav-center-wrapper {
+    flex-grow: 0.65; /* Позволяет этому контейнеру занимать все доступное пространство */
+    display: flex;
+    justify-content: center; /* Центрирует содержимое (ul.nav-links) внутри себя */
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center; /* Выравнивание кнопок по центру вертикали */
+    gap: 30px; /* Увеличил расстояние между кнопками для лучшего распределения */
+    /* margin-left: auto; /* УДАЛЕНО: Теперь центрирование делает .nav-center-wrapper */
+}
+
+.nav-links li {
+    margin-left: 0; /* Сброс предыдущих отступов, теперь управляется gap */
+}
+
+/* Общие стили для ссылок в навигации */
+.nav-links a {
+    text-decoration: none;
+    color: var(--light-text);
+    font-size: 1.1em; /* Увеличил размер шрифта */
+    padding: 10px 25px; /* Увеличил отступы для кнопок, чтобы они были больше */
+    border-radius: 25px; /* Скругление углов */
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    background: rgba(255, 255, 255, 0.1); /* Прозрачный фон для обычных кнопок */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Тонкая белая рамка */
+    font-weight: 600; /* Жирный шрифт для кнопок */
+    position: relative; /* Для эффекта подчеркивания, если он нужен */
+    line-height: 1.2; /* Установил line-height для лучшего вертикального выравнивания */
+}
+
+/* Эффект подчеркивания при наведении для обычных ссылок */
+.nav-links a:not(.tertiary-btn)::after { /* Применяем только к ссылкам, которые не являются .tertiary-btn */
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: var(--light-text);
+    bottom: 0; /* Позиция подчеркивания, чтобы не влияло на высоту */
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:not(.tertiary-btn):hover::after {
+    width: calc(100% - 25px); /* Ширина подчеркивания, учитывая новый padding */
+}
+
+
+.nav-links a:hover {
+    transform: translateY(-3px); /* Легкий подъем при наведении */
+    background: rgba(255, 255, 255, 0.3); /* Более насыщенный фон при наведении */
+    border-color: rgba(255, 255, 255, 0.7); /* Более яркая рамка при наведении */
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2); /* Тень при наведении */
+}
+
+/* Стиль для кнопки "Консультация" (tertiary-btn) */
+.btn.tertiary-btn { /* Более специфичный селектор для кнопки консультации */
+    background: white; /* Белый фон */
+    color: black; /* Черный текст */
+    border: 1px solid white; /* Белая рамка */
+    font-weight: bold; /* Жирный шрифт */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); /* Свечение */
+    padding-bottom: 10px; /* Скорректировал padding-bottom для соответствия другим кнопкам */
+    font-size: 1.1em; /* Установил тот же размер шрифта */
+}
+
+.btn.tertiary-btn:hover {
+    background: #e0e0e0; /* Чуть темнее при наведении */
+    color: black;
+    transform: translateY(-3px); /* Подъем при наведении */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.7); /* Усиленное свечение */
+}
+
+/* Убираем эффект подчеркивания для кнопки "Консультация" */
+.btn.tertiary-btn::after {
+    content: none; /* Удаляем псевдоэлемент, отвечающий за подчеркивание */
+}
+
+
+.menu-toggle {
+    display: none; /* Hidden on desktop */
+    background: none;
+    border: none;
+    color: var(--light-text); /* Menu toggle icon color */
+    font-size: 1.8em;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: 100vh; /* Changed to 100vh to ensure it covers the full screen */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(180deg, var(--dark-background) 0%, var(--medium-background) 100%);
+    padding: 50px 20px;
+    position: relative;
+    overflow: hidden; /* Hide overflowing stars */
+}
+
+.hero-content {
+    z-index: 2; /* Ensure content is above background stars */
+    max-width: 900px;
+    display: flex; /* Use flexbox for content inside hero */
+    flex-direction: column; /* Stack h1, p, and buttons vertically */
+    align-items: center; /* Center items horizontally */
+}
+
+.hero-content h1 {
+    font-size: 4.5em;
+    margin-bottom: 25px;
+    line-height: 1.2;
+    text-shadow: 0 0 25px rgba(255, 255, 255, 0.6); /* Stronger glow for hero heading */
+}
+
+.hero-content p {
+    font-size: 1.4em;
+    margin-bottom: 40px;
+    color: var(--gray-text);
+}
+
+/* New container for hero buttons */
+.hero-buttons {
+    display: flex; /* Arrange buttons side-by-side */
+    justify-content: center; /* Center buttons horizontally */
+    align-items: center; /* Align buttons vertically */
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+    gap: 20px; /* Space between buttons */
+    margin-top: 20px; /* Add some space above the buttons */
+}
+
+.hero-content .btn {
+    font-size: 1.1em;
+    padding: 15px 35px;
+    margin: 0; /* Remove individual button margins, controlled by gap in .hero-buttons */
+}
+
+
+/* General Section Styles */
+section {
+    padding: 80px 0;
+    background-color: var(--medium-background);
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+section:nth-child(even) { /* Alternate background for sections */
+    background-color: var(--dark-background);
+}
+
+section h2 {
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+/* Underline effect for section headings */
+section h2::after {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 4px;
+    background-color: var(--light-text); /* Underline uses light-text */
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -5px; /* Adjusted position */
+    border-radius: 2px;
+}
+
+.about-section p {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 15px auto;
+    font-size: 1.1em;
+    color: var(--gray-text);
+}
+
+/* Services Section Grid */
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.service-item {
+    background-color: var(--dark-background);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(255, 255, 255, 0.1); /* Glow from light-text on hover */
+}
+
+.service-item h3 {
+    color: var(--light-text); /* Service item headings use light-text */
+    margin-bottom: 15px;
+}
+
+.service-item p {
+    color: var(--gray-text);
+}
+
+.service-icon {
+    color: var(--light-text); /* Service icons use light-text */
+    margin-bottom: 20px;
+    font-size: 3em;
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.5)); /* Stronger glow for icons */
+}
+
+/* Portfolio Section Grid */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.portfolio-item {
+    background-color: var(--dark-background);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: scale(1.03);
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+.portfolio-info {
+    padding: 20px;
+}
+
+.portfolio-item h3 {
+    text-align: left;
+    margin: 0 0 10px 0;
+    color: var(--light-text); /* Portfolio item headings use light-text */
+    font-size: 1.5em;
+}
+
+.portfolio-item p {
+    text-align: left;
+    margin: 0 0 20px 0;
+    color: var(--gray-text);
+}
+
+/* Contact Section */
+.contact-section p {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+    font-size: 1.1em;
+    color: var(--gray-text);
+}
+
+.contact-calendly-btn {
+    margin: 0 auto 30px auto;
+    display: block; /* Center the button */
+    width: fit-content;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 40px auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid var(--accent-glow); /* Form inputs border use accent-glow */
+    background-color: var(--dark-background);
+    color: var(--light-text); /* Input text color */
+    border-radius: 8px;
+    font-size: 1em;
+    box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.1);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--white);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3), inset 0 0 5px rgba(255, 255, 255, 0.2);
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.contact-form .btn {
+    align-self: flex-end; /* Align button to the right */
+    margin-top: 10px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: var(--black);
+    padding: 40px 0 20px 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 20px;
+}
+
+.footer-logo img {
+    height: 60px;
+    filter: invert(0); /* Assuming logo is already white or light */
+    margin-bottom: 20px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 20px; /* Spacing between link columns */
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: var(--gray-text); /* Footer links use gray-text */
+    font-size: 1em;
+}
+
+.footer-links a:hover {
+    color: var(--light-text);
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px; /* For mobile */
+}
+
+.social-links a {
+    color: var(--gray-text); /* Social icons use gray-text */
+    font-size: 1.5em;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--light-text);
+    transform: scale(1.2);
+}
+
+.copyright {
+    color: var(--gray-text);
+    font-size: 0.9em;
+}
+
+/* Preloader Specific Styles */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--dark-background);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Ensure it's on top of everything */
+    overflow: hidden;
+    transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+}
+
+#preloader.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.preloader-star-logo {
+    width: 120px;
+    height: 120px;
+    animation: pulse 1.5s infinite alternate, rotate 10s linear infinite;
+    filter: drop-shadow(0 0 25px rgba(255, 255, 255, 0.7)); /* Stronger glow for preloader star */
+}
+
+/* Keyframes for preloader star animation */
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(1.1); opacity: 0.8; }
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.loading-spinner {
+    width: 80px;
+    height: 80px;
+    border: 6px solid var(--medium-background);
+    border-top: 6px solid var(--light-text); /* Spinner uses light-text */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-top: 30px;
+}
+
+/* Keyframes for spinner animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading-text {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: var(--gray-text);
+    font-family: 'Orbitron', sans-serif;
+}
+
+.star-fall-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none; /* Allow clicks through */
+}
+
+.star {
+    position: absolute;
+    background-color: var(--white); /* Falling stars are pure white */
+    border-radius: 50%;
+    opacity: 0;
+    animation: fallingStar var(--star-duration) linear infinite;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.6); /* Glow for falling stars */
+}
+
+/* Keyframes for falling stars */
+@keyframes fallingStar {
+    0% {
+        transform: translate(var(--star-start-x), var(--star-start-y)) scale(1);
+        opacity: 0;
+        box-shadow: none; /* Убрал box-shadow в конце анимации */
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--star-end-x), var(--star-end-y)) scale(0.5);
+        opacity: 0;
+        box-shadow: none;
+    }
+}
+
+/* Main content visibility */
+#main-content.hidden {
+    display: none;
+    opacity: 0;
+}
+
+#main-content.visible {
+    display: block;
+    animation: fadeIn 1s ease-in-out forwards; /* Use forwards to keep final state */
+}
+
+/* Keyframes for main content fade-in */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Hero Section Background Stars (added by JS) */
+.hero-star {
+    position: absolute;
+    background-color: var(--white); /* Hero stars are pure white */
+    border-radius: 50%;
+    opacity: 0;
+    animation: twinkle var(--twinkle-duration) infinite ease-in-out alternate;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.6); /* Glow for hero stars */
+    z-index: 1; /* Below content, above hero background */
+    pointer-events: none;
+}
+
+/* Keyframes for twinkling stars */
+@keyframes twinkle {
+    0%, 10%, 90%, 100% { opacity: 0; }
+    50% { opacity: 0.8; }
+}
+
+/* --- Consultation Page Specific Styles --- */
+#consultation-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensure it takes full viewport height */
+    position: relative;
+    overflow: hidden;
+}
+
+.stars-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0; /* Behind the form */
+    pointer-events: none;
+}
+
+.consultation-form-container {
+    width: 500px;
+    text-align: left;
+    background: var(--medium-background); /* Form background */
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Stronger shadow */
+    position: relative;
+    z-index: 1; /* Above stars */
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Spacing between form elements */
+}
+
+.consultation-form-container h1 {
+    color: var(--light-text);
+    margin-bottom: 25px;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.consultation-form-container label {
+    display: block;
+    width: 100%;
+    margin-bottom: 5px;
+    color: var(--light-text);
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.consultation-form-container input[type="text"],
+.consultation-form-container input[type="url"],
+.consultation-form-container input[type="email"] {
+    width: calc(100% - 2px); /* Account for border */
+    padding: 14px;
+    border: 1px solid var(--accent-glow); /* Border color for inputs */
+    border-radius: 10px;
+    background: var(--dark-background); /* Input background */
+    color: var(--light-text); /* Input text color */
+    font-size: 1em;
+    margin-bottom: 15px;
+    display: block;
+    box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.consultation-form-container input:focus {
+    outline: none;
+    border-color: var(--white);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4), inset 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.consultation-form-container .btn {
+    width: 100%; /* Make buttons full width */
+    margin-top: 10px;
+    font-size: 1.1em;
+    padding: 15px 0; /* Adjust padding for full width */
+}
+
+.back-to-home-btn {
+    margin-top: 15px;
+}
+
+/* Custom Message Box Styles */
+.custom-message-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000; /* Above everything */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.custom-message-box.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.message-content {
+    background: var(--medium-background);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 400px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    transform: translateY(-20px);
+    transition: transform 0.3s ease;
+}
+
+.custom-message-box.show .message-content {
+    transform: translateY(0);
+}
+
+.message-content p {
+    color: var(--light-text);
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.message-content .btn {
+    margin-top: 0; /* Reset margin for button inside message box */
+    width: auto; /* Allow button to size naturally */
+    padding: 10px 25px;
+}
+
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    h1 { font-size: 3em; }
+    h2 { font-size: 2.5em; }
+    .hero-content h1 { font-size: 3.8em; }
+    .hero-content p { font-size: 1.3em; }
+
+    .nav-links {
+        margin-left: auto; /* Push links to the right */
+    }
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 2.5em; }
+    h2 { font-size: 2em; }
+    h3 { font-size: 1.5em; }
+
+    nav {
+        flex-wrap: wrap; /* Allow nav items to wrap */
+        justify-content: center;
+        padding: 0 15px;
+    }
+
+    .logo-brand { /* Для мобильных устройств центрируем логотип */
+        flex-basis: 100%;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    .nav-links {
+        display: none; /* Hidden by default on mobile */
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+        background-color: var(--medium-background);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 10px 0;
+    }
+
+    .nav-links.active {
+        display: flex; /* Show when active */
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .nav-buttons {
+        flex-basis: 100%; /* Buttons take full width */
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .menu-toggle {
+        display: block; /* Show menu toggle on mobile */
+        position: absolute;
+        right: 20px;
+        top: 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 3em;
+    }
+
+    .hero-content p {
+        font-size: 1.1em;
+    }
+
+    .service-grid, .portfolio-grid {
+        grid-template-columns: 1fr; /* Single column layout */
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-links ul {
+        margin: 0;
+        margin-bottom: 20px;
+    }
+
+    .social-links {
+        margin-top: 20px;
+    }
+
+    .consultation-form-container {
+        width: 90%; /* Make form responsive */
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 { font-size: 2em; }
+    .hero-content h1 { font-size: 2.5em; }
+    .hero-content p { font-size: 0.9em; }
+    .btn { padding: 10px 20px; font-size: 0.8em; }
+    .contact-form { padding: 0 10px; }
+
+    .preloader-star-logo {
+        width: 80px;
+        height: 80px;
+    }
+
+    .loading-spinner {
+        width: 60px;
+        height: 60px;
+        border-width: 4px;
+    }
+
+    .loading-text {
+        font-size: 1em;
+    }
+
+    .consultation-form-container h1 {
+        font-size: 2em;
+    }
+    .consultation-form-container label {
+        font-size: 1em;
+    }
+    .consultation-form-container input {
+        padding: 12px;
+        font-size: 0.9em;
+    }
+}
+
+/* Keyframes for logo star animation */
+@keyframes logo-star-pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); } /* Slightly enlarge */
+    100% { transform: scale(1); }
+}
+
+/* New keyframes for vertical movement */
+@keyframes logo-star-float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-5px); } /* Move up by 5px */
+    100% { transform: translateY(0); }
+}
+
+
+
